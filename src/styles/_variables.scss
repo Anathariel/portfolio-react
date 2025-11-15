@@ -1,0 +1,87 @@
+// ==========================================
+// Theme Variables - Angéline's Portfolio
+// ==========================================
+
+// Colors - Cosmic/Celestial Theme (Enhanced)
+// Primary Aurora colors
+$color-primary: #86eae7;           // Turquoise/Cyan (Aurora)
+$color-primary-light: rgba(134, 234, 231, 0.58);
+$color-primary-ultra-light: rgba(134, 234, 231, 0.31);
+
+// Cosmic Accent Colors
+$color-nebula-purple: #a78bfa;     // Soft purple (nebula)
+$color-nebula-pink: #f472b6;       // Pink nebula
+$color-nebula-blue: #60a5fa;       // Bright blue
+$color-star-yellow: #fbbf24;       // Star yellow
+$color-deep-space: #0f0f23;        // Deep space blue-black
+$color-void: #050505;              // Pure void
+
+// Gradient colors for cosmic effects
+$gradient-cosmic-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-cosmic-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+$gradient-cosmic-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+$gradient-nebula: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+$gradient-aurora: linear-gradient(135deg, #86eae7 0%, #60a5fa 50%, #a78bfa 100%);
+
+// Text colors
+$color-text-main: #f8f8f8;         // Off-white
+$color-text-secondary: #D8CBC4;    // Beige/Sand
+$color-text-glow: #ffffff;         // Pure white for glows
+
+// Background colors
+$color-bg-main: #1a1a2e;           // Deep cosmic blue-black
+$color-bg-secondary: #16213e;      // Slightly lighter space
+$color-bg-overlay: rgba(255, 255, 255, 0.1);
+$color-bg-glass: rgba(255, 255, 255, 0.05);
+
+// Border and shadows
+$color-border: #f8f8f8;
+$color-border-glow: rgba(134, 234, 231, 0.6);
+$color-shadow: #000;
+$color-shadow-light: #363636;
+
+// Typography
+$font-primary: "Lora", serif;
+$font-primary-bold: "Lora-bold", serif;
+$font-heading: "UncialAntiqua", cursive;
+$font-decorative: "Fleur", cursive;
+
+// Spacing
+$header-height: 100px;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$breakpoint-mobile: 635px;
+$breakpoint-tablet: 770px;
+$breakpoint-desktop: 1200px;
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 500ms cubic-bezier(0.075, 0.81, 0.165, 1);
+$transition-slow: 1.5s cubic-bezier(0.075, 0.81, 0.165, 1);
+
+// Border radius
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+
+// Shadows - Enhanced Cosmic Effects
+$shadow-aurora: rgba(134, 234, 231, 0.58) 0px 3px 5px;
+$shadow-aurora-top: rgba(134, 234, 231, 0.58) 0px -3px 5px;
+$shadow-glow: 0 2px 8px $color-primary, 0 0 20px rgba(134, 234, 231, 0.3);
+$shadow-glow-purple: 0 2px 8px $color-nebula-purple, 0 0 20px rgba(167, 139, 250, 0.3);
+$shadow-glow-pink: 0 2px 8px $color-nebula-pink, 0 0 20px rgba(244, 114, 182, 0.3);
+$shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.5);
+$shadow-deep: rgba(0, 0, 0, 0.5) 0px 20px 60px 0px;
+$shadow-cosmic: 0 8px 32px rgba(134, 234, 231, 0.2), 0 0 60px rgba(167, 139, 250, 0.1);
+
+// Text shadows - Enhanced
+$text-shadow-main: -1px -1px 1px $color-shadow, 2px 2px 1px $color-shadow-light;
+$text-shadow-glow: 0 0 10px rgba(134, 234, 231, 0.8), 0 0 20px rgba(134, 234, 231, 0.5), 0 0 30px rgba(134, 234, 231, 0.3);
+$text-shadow-cosmic: 0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(134, 234, 231, 0.5);
+
+// Glassmorphism
+$backdrop-blur: blur(10px);
+$backdrop-blur-strong: blur(20px);

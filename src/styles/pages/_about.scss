@@ -1,0 +1,393 @@
+@use '../variables' as *;
+
+// ==========================================
+// Modern About Page Styles
+// ==========================================
+
+main#aboutMe {
+  padding: $spacing-xl * 2 $spacing-md;
+  min-height: calc(100vh - $header-height);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-xl $spacing-md;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  // Header Section
+  .about-header {
+    text-align: center;
+    margin-bottom: $spacing-xl * 2;
+
+    .about-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-family: $font-heading;
+      color: $color-text-glow;
+      text-shadow: $text-shadow-cosmic;
+      margin-bottom: $spacing-md;
+    }
+
+    .about-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: $color-text-secondary;
+    }
+  }
+
+  // Hero Section
+  .about-hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-xl;
+    max-width: 1400px;
+    margin: 0 auto $spacing-xl * 2;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  // Portrait Card
+  .about-portrait-card {
+    background: rgba(26, 26, 46, 0.4);
+    backdrop-filter: $backdrop-blur;
+    -webkit-backdrop-filter: $backdrop-blur;
+    border: 1px solid rgba(134, 234, 231, 0.2);
+    border-radius: $radius-md;
+    padding: $spacing-xl;
+    box-shadow: $shadow-cosmic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-lg;
+    }
+
+    .portrait-image {
+      width: 100%;
+      max-width: 300px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius-md;
+        border: 2px solid rgba(134, 234, 231, 0.3);
+        box-shadow: $shadow-glow;
+      }
+    }
+
+    .portrait-social {
+      display: flex;
+      gap: $spacing-lg;
+      justify-content: center;
+
+      a {
+        transition: all $transition-fast;
+        display: inline-block;
+
+        &:hover {
+          transform: translateY(-5px) scale(1.1);
+        }
+
+        img {
+          height: 40px;
+          width: auto;
+          filter: drop-shadow(0 0 10px rgba(134, 234, 231, 0.5));
+          transition: all $transition-fast;
+
+          &:hover {
+            filter: drop-shadow(0 0 20px rgba(134, 234, 231, 1));
+          }
+        }
+      }
+    }
+  }
+
+  // Bio Card
+  .about-bio-card {
+    background: rgba(26, 26, 46, 0.4);
+    backdrop-filter: $backdrop-blur;
+    -webkit-backdrop-filter: $backdrop-blur;
+    border: 1px solid rgba(134, 234, 231, 0.2);
+    border-radius: $radius-md;
+    padding: $spacing-xl;
+    box-shadow: $shadow-cosmic;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-lg;
+    }
+
+    .bio-controls-svg {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-mobile) {
+        min-height: 220px;
+      }
+
+      .moon-phase-bg {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        opacity: 0.4;
+        filter: drop-shadow(0 0 20px rgba(134, 234, 231, 0.5));
+
+        @media (max-width: $breakpoint-mobile) {
+          max-width: 280px;
+        }
+      }
+
+      .bio-controls-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .bio-controls-label {
+          position: absolute;
+          top: 20px;
+          font-family: $font-heading;
+          color: $color-primary;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          text-shadow: $text-shadow-glow;
+
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 1rem;
+            top: 15px;
+          }
+        }
+
+        .bio-options {
+          position: relative;
+          width: 100%;
+          max-width: 350px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media (max-width: $breakpoint-mobile) {
+            max-width: 280px;
+          }
+
+          .bio-option {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-sm;
+            top: 55%;
+            transform: translate(-50%, -50%);
+
+            // Positionnement selon les lunes du SVG
+            &:nth-child(1) {
+              left: 25%;
+            }
+
+            &:nth-child(2) {
+              left: 36%;
+            }
+
+            &:nth-child(3) {
+              left: 61%;
+            }
+
+            &:nth-child(4) {
+              left: 74%;
+            }
+
+            .bio-radio {
+              appearance: none;
+              width: 35px;
+              height: 35px;
+              border: 2px solid $color-primary;
+              border-radius: 50%;
+              cursor: pointer;
+              transition: all $transition-fast;
+              box-shadow: $shadow-glow;
+              background: rgba(26, 26, 46, 0.6);
+              backdrop-filter: blur(5px);
+
+              &:hover {
+                transform: scale(1.15);
+                box-shadow: $shadow-glow-purple;
+                background: rgba(26, 26, 46, 0.8);
+              }
+
+              &:checked {
+                background: $gradient-aurora;
+                border-color: transparent;
+                box-shadow: $shadow-glow-pink;
+                transform: scale(1.1);
+              }
+
+              @media (max-width: $breakpoint-mobile) {
+                width: 28px;
+                height: 28px;
+              }
+            }
+
+            .bio-radio-label {
+              font-family: $font-primary-bold;
+              font-size: 0.7rem;
+              color: $color-text-secondary;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              cursor: pointer;
+              transition: color $transition-fast;
+              text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+              white-space: nowrap;
+
+              @media (max-width: $breakpoint-mobile) {
+                font-size: 0.65rem;
+              }
+
+              &:hover {
+                color: $color-primary;
+              }
+
+              .visually-hidden {
+                color: transparent;
+                user-select: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bio-text {
+      font-size: 1.1rem;
+      color: $color-text-main;
+      line-height: 1.8;
+      text-align: left;
+      padding: $spacing-md;
+      border-left: 3px solid $color-primary;
+      background: rgba(134, 234, 231, 0.05);
+      border-radius: $radius-sm;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1rem;
+        padding: $spacing-sm;
+      }
+    }
+  }
+
+  // Skills Section
+  .about-skills {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-family: $font-heading;
+      color: $color-text-glow;
+      text-shadow: $text-shadow-cosmic;
+      text-align: center;
+      margin-bottom: $spacing-xl * 2;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $spacing-xl;
+
+      @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+      }
+
+      .skills-card {
+        background: rgba(26, 26, 46, 0.4);
+        backdrop-filter: $backdrop-blur;
+        -webkit-backdrop-filter: $backdrop-blur;
+        border: 1px solid rgba(134, 234, 231, 0.2);
+        border-radius: $radius-md;
+        padding: $spacing-xl;
+        box-shadow: $shadow-cosmic;
+        transition: all $transition-normal;
+
+        &:hover {
+          border-color: rgba(134, 234, 231, 0.4);
+          box-shadow: $shadow-glow;
+          transform: translateY(-5px);
+        }
+
+        &.full-width {
+          grid-column: 1 / -1;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          padding: $spacing-lg;
+        }
+
+        h3 {
+          font-size: 1.8rem;
+          font-family: $font-heading;
+          color: $color-primary;
+          text-shadow: $text-shadow-glow;
+          margin-bottom: $spacing-lg;
+        }
+
+        .skills-toggle {
+          display: flex;
+          gap: $spacing-sm;
+          margin-bottom: $spacing-lg;
+
+          .toggle-btn {
+            flex: 1;
+            padding: $spacing-sm $spacing-md;
+            background: transparent;
+            border: 2px solid rgba(134, 234, 231, 0.3);
+            border-radius: 50px;
+            color: $color-text-secondary;
+            font-family: $font-primary-bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all $transition-fast;
+
+            &:hover {
+              border-color: $color-primary;
+              color: $color-primary;
+            }
+
+            &.active {
+              background: $gradient-aurora;
+              border-color: transparent;
+              color: $color-text-glow;
+              box-shadow: $shadow-glow;
+            }
+          }
+        }
+
+        .skills-description {
+          font-size: 1rem;
+          color: $color-text-main;
+          line-height: 1.8;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

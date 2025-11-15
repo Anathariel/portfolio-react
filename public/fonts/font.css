@@ -1,0 +1,54 @@
+/* Font flowers for header menu */
+@font-face {
+    font-family: 'Fleur';
+    src: url(../fonts/FleurDeLeah-Regular.ttf);
+}
+
+/* Font LOTR for titles */
+@font-face {
+    font-family: 'UncialAntiqua';
+    src: url(../fonts/UncialAntiqua-Regular.ttf);
+}
+
+
+/* Main font text */
+@font-face {
+    font-family: 'Lora-bold';
+    src: url(../fonts/Lora-Bold.ttf);
+}
+@font-face {
+    font-family: 'Lora-boldItalic';
+    src: url(../fonts/Lora-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'Lora-italicAlt';
+    src: url(../fonts/Lora-Italic.ttf);
+}
+@font-face {
+    font-family: 'Lora-italic';
+    src: url(../fonts/Lora-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Lora-medium';
+    src: url(../fonts/Lora-Medium.ttf);
+}
+@font-face {
+    font-family: 'Lora-mediumItalic';
+    src: url(../fonts/Lora-MediumItalic.ttf);
+}
+@font-face {
+    font-family: 'Lora';
+    src: url(../fonts/Lora-Regular.ttf);
+}
+@font-face {
+    font-family: 'Lora-semiBold';
+    src: url(../fonts/Lora-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Lora-semiBoldItalic';
+    src: url(../fonts/Lora-SemiBoldItalic.ttf);
+}
+@font-face {
+    font-family: 'Lora-alt';
+    src: url(../fonts/Lora-Italic-VariableFont_wght.ttf);
+}

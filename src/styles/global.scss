@@ -1,0 +1,407 @@
+@use './variables' as *;
+
+// ==========================================
+// Global Reset & Base Styles
+// ==========================================
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+a,
+p,
+label,
+legend,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  list-style: none;
+  text-decoration: none;
+  font-family: $font-primary;
+}
+
+main {
+  margin-top: $header-height;
+  flex: 1;
+}
+
+// ==========================================
+// Modern Header Styles
+// ==========================================
+
+header {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  width: 100%;
+  padding: 0 $spacing-xl;
+  background: var(--color-bg-glass);
+  backdrop-filter: $backdrop-blur-strong;
+  -webkit-backdrop-filter: $backdrop-blur-strong;
+  border-bottom: 1px solid var(--color-primary-ultra-light);
+  transition: all $transition-fast;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 $spacing-md;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    z-index: 10001;
+    position: relative;
+    padding: $spacing-sm;
+    border-radius: $radius-sm;
+    transition: all $transition-fast;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(134, 234, 231, 0.15) 0%, transparent 70%);
+      border-radius: $radius-sm;
+      opacity: 0;
+      transition: opacity $transition-fast;
+      z-index: -1;
+    }
+
+    &:hover {
+      transform: scale(1.1) translateY(-2px);
+
+      &::before {
+        opacity: 1;
+      }
+
+      img {
+        filter: drop-shadow(0 0 15px rgba(134, 234, 231, 0.8))
+                drop-shadow(0 0 25px rgba(134, 234, 231, 0.5))
+                drop-shadow(0 0 35px rgba(134, 234, 231, 0.3));
+      }
+    }
+
+    img {
+      filter: drop-shadow(0 0 12px rgba(134, 234, 231, 0.6))
+              drop-shadow(0 0 20px rgba(134, 234, 231, 0.4));
+      transition: all $transition-fast;
+    }
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-lg;
+
+      li {
+        position: relative;
+        list-style: none;
+
+        a {
+          color: var(--color-text-secondary);
+          font-family: $font-primary-bold;
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          text-decoration: none;
+          padding: $spacing-sm $spacing-md;
+          transition: all $transition-fast;
+          position: relative;
+          display: inline-block;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $gradient-aurora;
+            transition: width $transition-fast;
+          }
+
+          &:hover {
+            color: var(--color-primary);
+            transform: translateY(-2px);
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    z-index: 10001;
+  }
+
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+
+    img {
+      width: 30px;
+      height: 30px;
+      filter: invert(1);
+      transition: all $transition-fast;
+
+      &:hover {
+        filter: invert(1) drop-shadow(0 0 10px rgba(134, 234, 231, 0.8));
+      }
+    }
+  }
+
+  // Mobile responsive
+  @media screen and (max-width: $breakpoint-mobile) {
+    .logo {
+      width: 60px;
+    }
+
+    nav.nav-menu {
+      display: none;
+
+      &.active {
+        display: flex;
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100vh - $header-height);
+        background: rgba(26, 26, 46, 0.98);
+        backdrop-filter: $backdrop-blur-strong;
+        -webkit-backdrop-filter: $backdrop-blur-strong;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+          flex-direction: column;
+          gap: $spacing-xl;
+
+          li a {
+            font-size: 1.5rem;
+            padding: $spacing-md;
+          }
+        }
+      }
+    }
+
+    .burger-menu {
+      display: block;
+    }
+  }
+}
+
+// ==========================================
+// Modern Footer Styles
+// ==========================================
+
+footer {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  background: var(--color-bg-glass);
+  backdrop-filter: $backdrop-blur-strong;
+  -webkit-backdrop-filter: $backdrop-blur-strong;
+  border-top: 1px solid var(--color-primary-ultra-light);
+  padding: $spacing-xl $spacing-md;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+
+    .footer-logo {
+      position: relative;
+      padding: $spacing-sm;
+      border-radius: $radius-sm;
+      transition: all $transition-fast;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(134, 234, 231, 0.15) 0%, transparent 70%);
+        border-radius: $radius-sm;
+        opacity: 0;
+        transition: opacity $transition-fast;
+        z-index: -1;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+
+        &::before {
+          opacity: 1;
+        }
+
+        img {
+          filter: drop-shadow(0 0 15px rgba(134, 234, 231, 0.8))
+                  drop-shadow(0 0 25px rgba(134, 234, 231, 0.5))
+                  drop-shadow(0 0 35px rgba(134, 234, 231, 0.3));
+        }
+      }
+
+      img {
+        height: 60px;
+        width: auto;
+        filter: drop-shadow(0 0 12px rgba(134, 234, 231, 0.6))
+                drop-shadow(0 0 20px rgba(134, 234, 231, 0.4));
+        transition: all $transition-fast;
+
+        @media (max-width: $breakpoint-mobile) {
+          height: 50px;
+        }
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      gap: $spacing-xl;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media (max-width: $breakpoint-mobile) {
+        gap: $spacing-lg;
+      }
+
+      a {
+        color: var(--color-text-secondary);
+        font-family: $font-primary-bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all $transition-fast;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $gradient-aurora;
+          transition: width $transition-fast;
+        }
+
+        &:hover {
+          color: var(--color-primary);
+          transform: translateY(-2px);
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .footer-copyright {
+      text-align: center;
+
+      p {
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// ==========================================
+// Utility Classes
+// ==========================================
+
+.bg--canvas {
+  // Canvas background for homepage aurora effect
+  position: relative;
+}
+
+// Glassmorphism Effects
+.glass {
+  background: $color-bg-glass;
+  backdrop-filter: $backdrop-blur;
+  -webkit-backdrop-filter: $backdrop-blur;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: $shadow-cosmic;
+}
+
+.glass-card {
+  background: rgba(26, 26, 46, 0.3);
+  backdrop-filter: $backdrop-blur;
+  -webkit-backdrop-filter: $backdrop-blur;
+  border: 1px solid rgba(134, 234, 231, 0.2);
+  border-radius: $radius-md;
+  box-shadow: $shadow-cosmic;
+  transition: all $transition-normal;
+
+  &:hover {
+    background: rgba(26, 26, 46, 0.4);
+    border-color: rgba(134, 234, 231, 0.4);
+    box-shadow: $shadow-glow;
+    transform: translateY(-2px);
+  }
+}
+
+.glass-strong {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: $backdrop-blur-strong;
+  -webkit-backdrop-filter: $backdrop-blur-strong;
+  border: 1px solid rgba(134, 234, 231, 0.3);
+  box-shadow: $shadow-deep;
+}

@@ -1,0 +1,21 @@
+// ==========================================
+// Main SCSS Entry Point
+// Portfolio Angéline Gillot
+// ==========================================
+
+// Import fonts first
+@use './fonts';
+
+// Import variables (as * to use without namespace)
+@use './variables' as *;
+
+// Import theme system
+@use './theme';
+
+// Import global styles
+@use './global';
+
+// Import page-specific styles
+@use './pages/home';
+@use './pages/about';
+@use './pages/projects';

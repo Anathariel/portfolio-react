@@ -1,0 +1,594 @@
+@use '../variables' as *;
+
+// ==========================================
+// Modern Homepage Styles
+// ==========================================
+
+main#homepage {
+  margin: 0;
+  padding: 0;
+
+  // Hero Section - Premium Design
+  .hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: $spacing-xl $spacing-md;
+    overflow: hidden;
+
+    // Aurora canvas
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    // Floating decorative elements
+    .floating-element {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 2;
+
+      &.floating-1 {
+        background: $gradient-aurora;
+        top: 10%;
+        left: 5%;
+      }
+
+      &.floating-2 {
+        background: $gradient-nebula;
+        bottom: 15%;
+        right: 10%;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 99;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      .hero-title-wrapper {
+        position: relative;
+        margin-bottom: $spacing-lg;
+
+        .hero-title {
+          font-size: clamp(3.5rem, 10vw, 7rem);
+          font-family: $font-heading;
+          color: $color-text-glow;
+          text-shadow:
+            0 0 20px rgba(134, 234, 231, 0.5),
+            0 0 40px rgba(134, 234, 231, 0.3),
+            0 0 60px rgba(134, 234, 231, 0.2),
+            $text-shadow-cosmic;
+          margin: 0;
+          letter-spacing: 3px;
+          font-weight: 700;
+          position: relative;
+          z-index: 2;
+
+          @media (max-width: $breakpoint-mobile) {
+            letter-spacing: 1px;
+          }
+        }
+
+        .title-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120%;
+          height: 120%;
+          background: radial-gradient(circle, rgba(134, 234, 231, 0.3) 0%, transparent 70%);
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+
+      .hero-subtitle-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: $spacing-xl;
+
+        .hero-subtitle {
+          font-size: clamp(1.8rem, 5vw, 3rem);
+          font-family: $font-decorative;
+          margin: 0;
+
+          .gradient-text {
+            background: $gradient-aurora;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+          }
+        }
+
+        .subtitle-underline {
+          height: 3px;
+          background: $gradient-aurora;
+          margin-top: $spacing-sm;
+          border-radius: 2px;
+          box-shadow: $shadow-glow;
+        }
+      }
+
+      .hero-description {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        color: $color-text-main;
+        margin-bottom: $spacing-xl * 1.5;
+        line-height: 1.8;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .highlight-text {
+          color: $color-primary;
+          font-family: $font-primary-bold;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $gradient-aurora;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .hero-links {
+        display: flex;
+        gap: $spacing-xl;
+        justify-content: center;
+        margin-bottom: $spacing-xl * 1.5;
+
+        .social-link {
+          display: inline-block;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            background: $gradient-aurora;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity $transition-fast;
+            z-index: -1;
+          }
+
+          &:hover::before {
+            opacity: 0.2;
+          }
+
+          img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(134, 234, 231, 0.5));
+            transition: all $transition-fast;
+
+            @media (max-width: $breakpoint-mobile) {
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: $spacing-lg;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: $spacing-xl * 2;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-sm;
+      cursor: pointer;
+
+      span {
+        color: $color-primary;
+        font-family: $font-primary-bold;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: $text-shadow-glow;
+
+        &.scroll-arrow {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  // Section Styles
+  section {
+    padding: $spacing-xl * 2 $spacing-md;
+    position: relative;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-xl $spacing-md;
+    }
+
+    .section-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $spacing-lg;
+      margin-bottom: $spacing-xl;
+
+      @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        gap: $spacing-sm;
+      }
+
+      .title-number {
+        font-family: $font-decorative;
+        color: $color-primary;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        text-shadow: $text-shadow-glow;
+      }
+
+      .title-line {
+        flex: 1;
+        max-width: 300px;
+        height: 2px;
+        background: $gradient-aurora;
+        border-radius: 2px;
+        box-shadow: $shadow-glow;
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+          max-width: 200px;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-family: $font-heading;
+      color: $color-text-glow;
+      text-shadow: $text-shadow-cosmic;
+      margin-bottom: $spacing-lg;
+    }
+
+    .section-description {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: $color-text-secondary;
+      line-height: 1.8;
+      margin-bottom: $spacing-xl;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Quick About Section
+  .quick-about {
+    background: rgba(26, 26, 46, 0.4);
+    backdrop-filter: $backdrop-blur;
+    -webkit-backdrop-filter: $backdrop-blur;
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+      margin-bottom: $spacing-xl;
+
+      .about-text-card {
+        background: rgba(134, 234, 231, 0.05);
+        border: 1px solid rgba(134, 234, 231, 0.2);
+        border-radius: $radius-md;
+        padding: $spacing-xl;
+        transition: all $transition-normal;
+
+        @media (max-width: $breakpoint-mobile) {
+          padding: $spacing-lg;
+        }
+
+        &:hover {
+          border-color: rgba(134, 234, 231, 0.4);
+          box-shadow: $shadow-glow;
+          transform: translateY(-5px);
+        }
+
+        .section-description {
+          margin-bottom: 0;
+
+          .highlight-text {
+            color: $color-primary;
+            font-family: $font-primary-bold;
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: $gradient-aurora;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+
+    .skills-preview {
+      display: flex;
+      gap: $spacing-md;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: $spacing-xl;
+
+      .skill-tag {
+        padding: $spacing-sm $spacing-lg;
+        background: rgba(134, 234, 231, 0.1);
+        border: 1px solid rgba(134, 234, 231, 0.3);
+        border-radius: 50px;
+        color: $color-primary;
+        font-family: $font-primary-bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all $transition-fast;
+        cursor: pointer;
+
+        &:hover {
+          background: rgba(134, 234, 231, 0.2);
+          border-color: $color-primary;
+          box-shadow: $shadow-glow;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  // Featured Projects Section
+  .featured-projects {
+    .cta-link {
+      margin-top: $spacing-xl;
+    }
+  }
+
+  // CSS Custom Properties for animated gradient
+  @property --color-cta-1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: hsl(260, 70%, 60%);
+  }
+
+  @property --color-cta-2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: hsl(280, 65%, 65%);
+  }
+
+  @property --color-cta-3 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: hsl(300, 70%, 70%);
+  }
+
+  // CTA Section
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-cta-1) 0%, var(--color-cta-2) 50%, var(--color-cta-3) 100%);
+    animation: gradientColorShift 15s ease-in-out infinite;
+    padding: $spacing-xl * 3 $spacing-md;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-xl * 2 $spacing-md;
+    }
+
+    .cta-decoration {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+
+      .decoration-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(134, 234, 231, 0.3) 0%, transparent 70%);
+        filter: blur(60px);
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    .section-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-family: $font-heading;
+      color: $color-text-glow;
+      text-shadow: $text-shadow-cosmic;
+      margin-bottom: $spacing-md;
+
+      .gradient-text {
+        color: #ffffff;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        mix-blend-mode: difference;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                     0 0 40px rgba(134, 234, 231, 0.6),
+                     0 0 60px rgba(134, 234, 231, 0.4);
+      }
+    }
+
+    .cta-description {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: $color-text-main;
+      margin-bottom: $spacing-xl;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: $spacing-md;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  // Buttons Styles
+  .btn-primary,
+  .btn-secondary {
+    padding: $spacing-md $spacing-xl;
+    border-radius: 50px;
+    font-family: $font-primary-bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all $transition-fast;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: $gradient-aurora;
+    color: $color-text-glow;
+    border: none;
+    box-shadow: $shadow-glow;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-glow-purple;
+    }
+
+    &.glow-button {
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      &:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background: rgba(134, 234, 231, 0.1);
+      border-color: $color-text-glow;
+      color: $color-text-glow;
+      box-shadow: $shadow-glow;
+      transform: translateY(-3px);
+    }
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+    transition: transform $transition-fast;
+  }
+
+  .glow-button:hover .btn-icon {
+    transform: translateX(3px);
+  }
+
+  // Gradient color animation for CTA section - seamless loop with smooth transitions
+  @keyframes gradientColorShift {
+    0% {
+      --color-cta-1: hsl(260, 70%, 60%);
+      --color-cta-2: hsl(280, 65%, 65%);
+      --color-cta-3: hsl(300, 70%, 70%);
+    }
+    20% {
+      --color-cta-1: hsl(240, 68%, 62%);
+      --color-cta-2: hsl(270, 67%, 66%);
+      --color-cta-3: hsl(310, 72%, 68%);
+    }
+    40% {
+      --color-cta-1: hsl(220, 72%, 64%);
+      --color-cta-2: hsl(260, 70%, 67%);
+      --color-cta-3: hsl(320, 68%, 66%);
+    }
+    60% {
+      --color-cta-1: hsl(240, 68%, 62%);
+      --color-cta-2: hsl(280, 68%, 65%);
+      --color-cta-3: hsl(300, 70%, 68%);
+    }
+    80% {
+      --color-cta-1: hsl(250, 70%, 61%);
+      --color-cta-2: hsl(290, 66%, 66%);
+      --color-cta-3: hsl(310, 72%, 69%);
+    }
+    100% {
+      --color-cta-1: hsl(260, 70%, 60%);
+      --color-cta-2: hsl(280, 65%, 65%);
+      --color-cta-3: hsl(300, 70%, 70%);
+    }
+  }
+}
