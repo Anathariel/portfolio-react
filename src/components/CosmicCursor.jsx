@@ -22,7 +22,7 @@ const CosmicCursor = () => {
     // Set canvas size
     const resize = () => {
       width = window.innerWidth;
-      height = window.innerHeight;claude
+      height = window.innerHeight;
       
       canvas.width = width;
       canvas.height = height;
@@ -45,7 +45,6 @@ const CosmicCursor = () => {
       const speedX = Math.cos(angle) * speed;
       const speedY = Math.sin(angle) * speed;
 
-      // Palette de couleurs cosmiques
       const colors = ['#86eae7', '#7fd3ff', '#a8e6cf', '#ffd3b6', '#ffffff'];
       const color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -68,16 +67,13 @@ const CosmicCursor = () => {
       const deltaTime = currentTime - lastTime.current;
       lastTime.current = currentTime;
 
-      // Clear canvas with fade effect
       ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, width, height);
 
-      // Create new particles (throttled)
       if (deltaTime < 50) {
         particles.current.push(createParticle(mousePos.current.x, mousePos.current.y));
       }
 
-      // Update and draw particles
       particles.current = particles.current.filter(particle => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
@@ -86,14 +82,12 @@ const CosmicCursor = () => {
 
         if (particle.life <= 0) return false;
 
-        // Draw particle
         ctx.save();
         ctx.globalAlpha = particle.life * 0.7;
         ctx.fillStyle = particle.color;
         ctx.shadowBlur = 10;
         ctx.shadowColor = particle.color;
 
-        // Draw star shape (5 branches)
         ctx.translate(particle.x, particle.y);
         ctx.rotate(particle.rotation);
         ctx.beginPath();
@@ -108,22 +102,17 @@ const CosmicCursor = () => {
           const x = Math.cos(angle) * radius;
           const y = Math.sin(angle) * radius;
 
-          if (i === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
         }
 
         ctx.closePath();
         ctx.fill();
-
         ctx.restore();
 
         return true;
       });
 
-      // Limit particle count
       if (particles.current.length > 150) {
         particles.current = particles.current.slice(-150);
       }
@@ -138,9 +127,7 @@ const CosmicCursor = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', resize);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      cancelAnimationFrame(animationRef.current);
     };
   }, []);
 
