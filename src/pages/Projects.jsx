@@ -38,9 +38,9 @@ const Projects = () => {
         animate="visible"
         variants={fadeInUp}
       >
-        <h1 className="projects-title">Mes Projets</h1>
+        <h1 className="projects-title">My Projects</h1>
         <p className="projects-description">
-          Découvrez mes réalisations et créations web
+          Discover my realisations and web creations
         </p>
       </motion.div>
 
@@ -112,7 +112,7 @@ const Projects = () => {
                     className="btn-primary"
                   >
                     <img src="/images/icons/github.svg" alt="GitHub" />
-                    Voir sur GitHub
+                    See on GitHub
                   </a>
                 </div>
 

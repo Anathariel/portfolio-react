@@ -45,7 +45,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/images/CV/DevWebENAngéline_Gillot.pdf"
+              href="/images/CV/CV English.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}

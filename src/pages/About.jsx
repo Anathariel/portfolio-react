@@ -24,10 +24,10 @@ const About = () => {
   };
 
   const bioLengthOptions = [
-    { value: 'shortest', label: 'Court' },
-    { value: 'shorter', label: 'Moyen' },
+    { value: 'shortest', label: 'Short' },
+    { value: 'shorter', label: 'Medium' },
     { value: 'long', label: 'Long' },
-    { value: 'longest', label: 'Complet' }
+    { value: 'longest', label: 'Full' }
   ];
 
   return (
@@ -39,8 +39,8 @@ const About = () => {
         animate="visible"
         variants={fadeInUp}
       >
-        <h1 className="about-title">À propos de moi</h1>
-        <p className="about-subtitle">Développeuse web passionnée par la création</p>
+        <h1 className="about-title">About Me</h1>
+        <p className="about-subtitle">Web Developper fascinated with creation</p>
       </motion.div>
 
       {/* Hero Section with Bio and Portrait */}
@@ -76,7 +76,7 @@ const About = () => {
               className="moon-phase-bg"
             />
             <div className="bio-controls-overlay">
-              <label className="bio-controls-label">Longueur de la bio</label>
+              <label className="bio-controls-label">Length of my bio</label>
               <div className="bio-options">
                 {bioLengthOptions.map((option, index) => (
                   <div key={option.value} className="bio-option">
@@ -123,7 +123,7 @@ const About = () => {
         variants={staggerContainer}
       >
         <motion.h2 className="section-title" variants={fadeInUp}>
-          Compétences
+          Skills
         </motion.h2>
 
         <motion.div className="skills-grid" variants={fadeInUp}>
@@ -158,7 +158,7 @@ const About = () => {
           </div>
 
           <div className="skills-card">
-            <h3>Outils</h3>
+            <h3>Tools</h3>
             <p className="skills-description">{toolsData}</p>
           </div>
 

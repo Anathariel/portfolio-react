@@ -63,8 +63,8 @@ export const projects = [
     tech: "Group Project - PHP & Altorouter / Twig - SCSS & JS",
     github: "https://github.com/Anathariel/Project-Rbnb",
     images: [
-      "/images/projects/locar-home",
-      "/images/projects/locar-dashboard"
+      "/images/projects/locar-home.png",
+      "/images/projects/locar-dashboard.png"
     ],
     alt: [
       "Loca'R, airbnb website project - Main",
@@ -78,8 +78,8 @@ export const projects = [
     tech: "Solo Project - HTML & SCSS + JS",
     github: "https://github.com/Anathariel/Team180",
     images: [
-      "/images/projects/team180-home",
-      "/images/projects/team180-blog"
+      "/images/projects/team180-home.png",
+      "/images/projects/team180-home.png"
     ],
     alt: [
       "Team 180 - Wordpress Template - Main",

@@ -26,13 +26,13 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/angeledev/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a href="/images/CV/DevWebENAngéline_Gillot.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/images/CV/CV English.pdf" target="_blank" rel="noopener noreferrer">
             CV
           </a>
         </div>
 
         <div className="footer-copyright">
-          <p>&copy; {currentYear} Angéline Gillot. Fait avec ✨ et React</p>
+          <p>&copy; {currentYear} Angéline Gillot. Made with ✨ and React</p>
         </div>
       </div>
     </footer>

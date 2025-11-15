@@ -99,13 +99,13 @@ const Home = () => {
           </motion.div>
 
           <motion.p
-            variants={fadeInUp}
-            className="hero-description"
-          >
-            Créatrice d'expériences web{" "}
-            <span className="highlight-text">cosmiques</span> et{" "}
-            <span className="highlight-text">immersives</span>
-          </motion.p>
+          variants={fadeInUp}
+          className="hero-description"
+        >
+          Creator of{" "}
+          <span className="highlight-text">cosmic</span> and{" "}
+          <span className="highlight-text">immersive</span> web experiences
+        </motion.p>
 
           <motion.div variants={fadeInUp} className="hero-links">
             <motion.a
@@ -136,7 +136,7 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/projects" className="btn-primary glow-button">
-                <span>Voir mes projets</span>
+                <span>See my projects</span>
                 <motion.span
                   className="btn-icon"
                   animate={{ x: [0, 5, 0] }}
@@ -151,7 +151,7 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/about" className="btn-secondary">
-                En savoir plus
+                Learn more
               </Link>
             </motion.div>
           </motion.div>
@@ -200,7 +200,7 @@ const Home = () => {
         >
           <motion.div variants={fadeInUp} className="section-header">
             <h2 className="section-title">
-              <span className="title-number">01.</span> À propos
+              <span className="title-number">01.</span> About Me
             </h2>
             <motion.div
               className="title-line"
@@ -214,9 +214,9 @@ const Home = () => {
           <motion.div variants={fadeInUp} className="about-grid">
             <div className="about-text-card">
               <p className="section-description">
-                Développeuse web passionnée par la création d'interfaces modernes et intuitives.
-                Je transforme des idées en{" "}
-                <span className="highlight-text">expériences numériques captivantes</span>.
+                Passionate web developer focused on creating modern and intuitive interfaces.
+                I turn ideas into{" "}
+                <span className="highlight-text">captivating digital experiences</span>.
               </p>
             </div>
             <motion.div className="skills-preview">
@@ -249,7 +249,7 @@ const Home = () => {
         >
           <motion.div variants={fadeInUp} className="section-header">
             <h2 className="section-title">
-              <span className="title-number">02.</span> Projets en vedette
+              <span className="title-number">02.</span> Featured Projects
             </h2>
             <motion.div
               className="title-line"
@@ -261,7 +261,7 @@ const Home = () => {
           </motion.div>
 
           <motion.p variants={fadeInUp} className="section-description">
-            Découvrez mes dernières créations et explorez mon univers technique
+            Discover my last projects and discover my universe
           </motion.p>
 
           <motion.div
@@ -270,7 +270,7 @@ const Home = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Link to="/projects" className="btn-primary glow-button">
-              <span>Voir tous les projets</span>
+              <span>See all my project</span>
               <span className="btn-icon">→</span>
             </Link>
           </motion.div>
@@ -301,10 +301,10 @@ const Home = () => {
           </motion.div>
 
           <motion.h2 variants={fadeInUp} className="cta-title">
-            Travaillons <span className="gradient-text">ensemble</span>
+            Let's work <span className="gradient-text">together</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="cta-description">
-            Vous avez un projet en tête ? Discutons-en et créons quelque chose d'extraordinaire !
+            A project in head ? Let's talk about it and create something wonderful !
           </motion.p>
           <motion.div variants={fadeInUp} className="cta-buttons">
             <motion.a
@@ -315,7 +315,7 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Me contacter</span>
+              <span>Contact Me</span>
               <span className="btn-icon">✉</span>
             </motion.a>
           </motion.div>

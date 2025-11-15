@@ -40,8 +40,8 @@ As a teammate, I wish not only to progress but help those around me as I love to
 };
 
 export const skillsData = {
-  front: "html ✧ css / scss ✧ js / Vue.js ✧ bootstrap",
-  back: "php ✧ sql ✧ mysql ✧ python ✧ symphony ✧ Rest API"
+  front: "HTML ✧ CSS / SCSS ✧ JS / Vue.js ✧ Bootstrap",
+  back: "PHP ✧ SQL ✧ MySQL ✧ Python ✧ Symphony ✧ Rest API"
 };
 
 export const toolsData = "✧ Figma ✧ Git / GitHub ✧ VS Code ✧ Notion ✧ Trello";
