@@ -230,6 +230,8 @@ main#projects {
           text-transform: uppercase;
           letter-spacing: 1px;
           transition: all $transition-fast;
+          margin-right: $spacing-xl;
+
 
           img {
             height: 24px;
