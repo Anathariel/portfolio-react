@@ -186,11 +186,11 @@ header {
     img {
       width: 30px;
       height: 30px;
-      filter: invert(1);
+      // filter: invert(1);
       transition: all $transition-fast;
 
       &:hover {
-        filter: invert(1) drop-shadow(0 0 10px rgba(134, 234, 231, 0.8));
+        filter: drop-shadow(0 0 10px rgba(134, 234, 231, 0.8));
       }
     }
   }
