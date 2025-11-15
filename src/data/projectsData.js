@@ -21,6 +21,7 @@
  * - description : Description détaillée
  * - tech : Technologies utilisées
  * - github : Lien vers le dépôt GitHub
+ * live : lien vers le site hébergé
  * - images : Tableau des chemins d'images (relatifs à /public/)
  * - alt : Tableau des descriptions alternatives pour l'accessibilité
  */
@@ -32,6 +33,7 @@ export const projects = [
     description: "Inkfection was my first full HTML/CSS website project consisting of maquetting and coding a responsive onepage website for a tattoo salon.",
     tech: "Solo project - HTML/CSS only",
     github: "https://github.com/Anathariel/Projet-Tatouage",
+    live:'https://projet-tatouage.vercel.app/',
     images: [
       "/images/projects/inkfection-home.png",
       "/images/projects/inkfection-stats.png"
@@ -42,18 +44,19 @@ export const projects = [
     ]
   },
   {
-    id: "bouquine",
-    name: "Bouquine",
-    description: "Bouquine is the name of my first group project, working with two front-developers, One lead-developer and me in back-end. It consisted of a PHP project for a library service with renting system. I managed the database and most of the CRUD system of this project. Also includes an admin side.",
-    tech: "Group Project - PHP - HTML - SCSS & JS",
-    github: "https://github.com/DayZmooN/bouquine",
+    id: "AfterGlow",
+    name: "AfterGlow",
+    description: "AfterGlow is a solo project made for discovering Vue.js and the use of the cocktail API; I went for a neon type fantasy website for your cocktail recipe findings ! Hope you like it I had lots of fun working in Vue.js.",
+    tech: "Solo Project - Vue.js - HTML - SCSS & API Cocktail",
+    github: "https://github.com/Anathariel/AfterGlow",
+    live:'https://after-glow-swart.vercel.app/#/',
     images: [
-      "/images/projects/bouquine-home.png",
-      "/images/projects/bouquine-book.png"
+      "/images/projects/AfterGlowHomepage.png",
+      "/images/projects/AfterGlowCatalogue.png"
     ],
     alt: [
-      "Bouquine, library website collaborative project - Main",
-      "Bouquine, library website collaborative project - Book reservation"
+      "AfterGlow; solo project with API cocktail - Main",
+      "AfterGlow; solo project for cocktail recipes"
     ]
   },
   {
@@ -62,6 +65,7 @@ export const projects = [
     description: "Loca'R is the first MVC structured project for a airbnb type website. We were given Twig & Altorouter as guidelines to use for this one. No symfony, full PHP.",
     tech: "Group Project - PHP & Altorouter / Twig - SCSS & JS",
     github: "https://github.com/Anathariel/Project-Rbnb",
+    // live:'https://projet-tatouage.vercel.app/',
     images: [
       "/images/projects/locar-home.png",
       "/images/projects/locar-dashboard.png"
@@ -77,6 +81,7 @@ export const projects = [
     description: "A simple custom Wordpress Template made for a blog about our class. It regroups a part for blog articles and one to present me and my collegues.",
     tech: "Solo Project - HTML & SCSS + JS",
     github: "https://github.com/Anathariel/Team180",
+    // live:'https://team180.vercel.app/',
     images: [
       "/images/projects/team180-home.png",
       "/images/projects/team180-home.png"

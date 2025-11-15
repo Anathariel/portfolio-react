@@ -114,6 +114,15 @@ const Projects = () => {
                     <img src="/images/icons/github.svg" alt="GitHub" />
                     See on GitHub
                   </a>
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <img src="/images/icons/hearts.svg" alt="Live" />
+                    See in live
+                  </a>
                 </div>
 
                 <div className="modal-gallery">

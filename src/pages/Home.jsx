@@ -214,13 +214,12 @@ const Home = () => {
           <motion.div variants={fadeInUp} className="about-grid">
             <div className="about-text-card">
               <p className="section-description">
-                Passionate web developer focused on creating modern and intuitive interfaces.
-                I turn ideas into{" "}
-                <span className="highlight-text">captivating digital experiences</span>.
+                Full stack developer weaving code, creativity and a touch of{" "}
+                <span className="highlight-text">fantasy into immersive digital worlds.</span>.
               </p>
             </div>
             <motion.div className="skills-preview">
-              {['React', 'JavaScript', 'SASS', 'Node.js', 'UI/UX'].map((skill, index) => (
+              {['React', 'JavaScript', 'SASS', 'Node.js', 'UI/UX','Figma','Vue.js'].map((skill, index) => (
                 <motion.div
                   key={skill}
                   className="skill-tag"
